@@ -1,4 +1,5 @@
 node_modules
 
+# These generated files are out 
 nexus-typegen.ts
 schema.graphql
