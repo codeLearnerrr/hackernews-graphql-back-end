@@ -80,5 +80,19 @@ export const LinkMutation = extendType({
                 return updatedLink;
             }
         });
+        t.nonNull.field("deleteLink", {
+            type: "Link",
+            args: { id: nonNull(idArg()) },
+            resolve(parent, args, context) {
+                const { id } = args;
+
+                const elemId = links.findIndex(elem => elem.id === Number(id)) === -1 ? 0 : links.findIndex(elem => elem.id === Number(id));
+                const elementToBeDeleted = links[elemId];
+
+                delete links[elemId];
+
+                return elementToBeDeleted;
+            }
+        });
     },
 });
