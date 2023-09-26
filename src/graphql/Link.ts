@@ -1,4 +1,4 @@
-import { extendType, nonNull, objectType, stringArg } from "nexus";
+import { extendType, nonNull, objectType, stringArg, idArg } from "nexus";
 import { NexusGenObjects } from "../../nexus-typegen";
 
 export const Link = objectType({
@@ -56,6 +56,28 @@ export const LinkMutation = extendType({
 
                 links.push(link);
                 return link;
+            }
+        });
+        t.nonNull.field("updateLink", {
+            type: 'Link',
+            args: {
+                id: nonNull(idArg()),
+                url: stringArg(),
+                description: stringArg()
+            },
+            resolve(parent, args, context) {
+                const { id, url, description } = args;
+
+                const desiredIndex: number = links.findIndex(elem => elem.id === Number(id));
+                const updatedLink: NexusGenObjects['Link'] = {
+                    id: Number(id),
+                    url: url?.length === 0 ? links[desiredIndex].url : url!,
+                    description: description?.length === 0 ? links[desiredIndex].description : description!
+                };
+
+                links[desiredIndex] = updatedLink;
+
+                return updatedLink;
             }
         });
     },
