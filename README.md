@@ -3,6 +3,10 @@
 
 ## Project Notes
 - Nexus is the schema generator for graphql and prisma
+- After every change in the data model of prisma, it needs to be migrated
+
+## Troubleshooting
+- If after a prisma migration the data model types don't show up in Nexus context param, reload the IDE
 
 ## Prerequisites
 
