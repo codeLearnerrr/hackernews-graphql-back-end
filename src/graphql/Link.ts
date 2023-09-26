@@ -94,5 +94,14 @@ export const LinkMutation = extendType({
                 return elementToBeDeleted;
             }
         });
+        t.nonNull.field("link", {
+            type: 'Link',
+            args: { id: nonNull(idArg()) },
+            resolve(parent, args, context) {
+                const { id } = args;
+
+                return links.find(elem => elem.id === Number(id)) || links[0];
+            }
+        });
     },
 });
