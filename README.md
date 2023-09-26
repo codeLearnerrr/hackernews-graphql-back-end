@@ -2,7 +2,7 @@
  This boilerplate containts an Apollo GraphQL Server + Prisma as SQL database. 
 
 ## Project Notes
-- Nexus is the schema generator for graphql
+- Nexus is the schema generator for graphql and prisma
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@
 
 ## Features
 
-- [x] Automatic schema generation and typescript types from "code first" approach provided by [Nexus GraphQL](https://www.npmjs.com/package/nexus)
+- [x] Automatic schema generation and typescript types from "code first" approach provided by [Nexus GraphQL](https://www.npmjs.com/package/nexus) 
 - [x] [Prisma](https://www.npmjs.com/package/prisma) as type-safe ORM 
 - [x] Pre-configured GraphQL server from [Apollo Server](https://www.npmjs.com/package/apollo-server)
 - [x] Typescript support from [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
