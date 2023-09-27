@@ -4,6 +4,7 @@
 ## Project Notes
 - Nexus is the schema generator for graphql and prisma
 - After every change in the data model of prisma, it needs to be migrated
+- Maybe there is a set up for Auth.ts related to APP_SECRET check it out before installing
 
 ## Troubleshooting
 - If after a prisma migration the data model types don't show up in Nexus context param, reload the IDE
@@ -21,7 +22,9 @@
 - [x] [Prisma](https://www.npmjs.com/package/prisma) as type-safe ORM 
 - [x] Pre-configured GraphQL server from [Apollo Server](https://www.npmjs.com/package/apollo-server)
 - [x] Typescript support from [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
+- [x] Localhost Prisma Studio for database administration by running `npx prisma studio` on CLI
 
 ## Installing
 
 - Clone this project
+- Do any .env set up locally?
