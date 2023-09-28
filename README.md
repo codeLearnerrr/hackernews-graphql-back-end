@@ -6,6 +6,7 @@
 - After every change in the data model of prisma, it needs to be migrated
 - Maybe there is a set up for Auth.ts related to APP_SECRET check it out before installing
 - Sorting with multiple criterias input object is a sequence of objects this way [LinkOrderByInput!] -> [{url: asc}, {description: desc}]
+- The postgreSQL database is runned in docker
 
 ## Troubleshooting
 - If after a prisma migration the data model types don't show up in Nexus context param, reload the IDE
@@ -14,6 +15,7 @@
 
 - [x] Have an Apollo account for Apollo Studio [here](https://studio.apollographql.com/)
 - [x] Have an Prisma account for Prisma Studio [here](https://www.prisma.io/studio)
+- [x] Install docker from [here](https://docs.docker.com/desktop/install/windows-install/)
 - [x] Create local dev.db instead of env('DATABASE_URL') in schema.prisma file > datasource db > url 
 - [x] Run the prisma database script before using it `npx prisma migrate dev --name "init"`
 

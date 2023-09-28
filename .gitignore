@@ -5,6 +5,7 @@ node_modules
 # These generated files are out 
 nexus-typegen.ts
 schema.graphql
+dist
 
 prisma/*
 !prisma/schema.prisma

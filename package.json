@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --transpile-only --no-notify --exit-child src/index.ts",
     "generate": "ts-node --transpile-only src/schema.ts",
-    "prismaStudio": "npx prisma studio"
+    "prismaStudio": "npx prisma studio",
+    "dockerDb": "docker-compose up"
   },
   "dependencies": {
     "@prisma/client": "^5.3.1",
