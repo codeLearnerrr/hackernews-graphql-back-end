@@ -8,7 +8,10 @@
     "dev": "ts-node-dev --transpile-only --no-notify --exit-child src/index.ts",
     "generate": "ts-node --transpile-only src/schema.ts",
     "prismaStudio": "npx prisma studio",
-    "dockerDb": "docker-compose up"
+    "dockerDb": "docker-compose up",
+    "migrate:deploy": "prisma migrate deploy",
+    "build": "prisma generate && npm run generate && tsc",
+    "start": "node dist/src/index.js"
   },
   "dependencies": {
     "@prisma/client": "^5.3.1",

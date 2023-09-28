@@ -17,6 +17,8 @@
 - [x] Have an Prisma account for Prisma Studio [here](https://www.prisma.io/studio)
 - [x] Install docker from [here](https://docs.docker.com/desktop/install/windows-install/)
 - [x] Create local dev.db instead of env('DATABASE_URL') in schema.prisma file > datasource db > url 
+- [x] To publish is necessary to provision a `heroku-postgres` add-on instance
+- [x] Before publishing to heroku make sure you added the github secrets used in `deployment.yml`
 - [x] Run the prisma database script before using it `npx prisma migrate dev --name "init"`
 
 ## Features
