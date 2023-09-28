@@ -17,7 +17,7 @@ model Link {
   url         String
   postedBy    User?    @relation(name: "PostedBy", fields: [postedById], references: [id])
   postedById  Int?
-  voters      User[]    @relation(name: "Votes")
+  voters      User[]   @relation(name: "Votes")
 }
 
 model User {
