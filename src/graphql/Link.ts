@@ -1,4 +1,4 @@
-import { extendType, nonNull, objectType, stringArg, idArg } from "nexus";
+import { extendType, nonNull, objectType, stringArg, idArg, intArg } from "nexus";
 import { NexusGenObjects } from "../../nexus-typegen";
 
 export const Link = objectType({
@@ -29,13 +29,17 @@ export const LinkQuery = extendType({
         t.nonNull.list.nonNull.field("feed", {
             type: 'Link',
             description: "Query all links",
-            args: { filter: stringArg() },
+            args: { filter: stringArg(), skip: intArg(), take: intArg() },
             resolve(parent, args, context, info) {
                 const where = args.filter ? {
                     OR:
                         [{ description: { contains: args.filter } }, { url: { contains: args.filter } }]
                 } : {};
-                return context.prisma.link.findMany({ where });
+                return context.prisma.link.findMany({
+                    where,
+                    skip: args?.skip as number | undefined,
+                    take: args?.take as number | undefined
+                });
             }
         });
         t.nonNull.field("link", {
