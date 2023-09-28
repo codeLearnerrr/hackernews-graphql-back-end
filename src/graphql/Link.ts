@@ -1,5 +1,4 @@
 import { extendType, nonNull, objectType, stringArg, idArg, intArg, inputObjectType, enumType, arg, list } from "nexus";
-import { NexusGenObjects } from "../../nexus-typegen";
 import { Prisma } from "@prisma/client";
 
 export const Link = objectType({
@@ -109,7 +108,7 @@ export const LinkMutation = extendType({
 
                 const originalLink = await context.prisma.link.findUniqueOrThrow({ where: { id: Number(id) } });
 
-                const updatedLinkObj: NexusGenObjects['Link'] = {
+                const updatedLinkObj = {
                     ...originalLink,
                     url: url?.length === 0 ? originalLink.url : url!,
                     description: description?.length === 0 ? originalLink.description : description!
