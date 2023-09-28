@@ -5,6 +5,7 @@
 - Nexus is the schema generator for graphql and prisma
 - After every change in the data model of prisma, it needs to be migrated
 - Maybe there is a set up for Auth.ts related to APP_SECRET check it out before installing
+- Sorting with multiple criterias input object is a sequence of objects this way [LinkOrderByInput!] -> [{url: asc}, {description: desc}]
 
 ## Troubleshooting
 - If after a prisma migration the data model types don't show up in Nexus context param, reload the IDE
