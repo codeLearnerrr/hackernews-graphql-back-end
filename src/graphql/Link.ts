@@ -7,6 +7,7 @@ export const Link = objectType({
         t.nonNull.int("id");
         t.nonNull.string("description");
         t.nonNull.string("url");
+        t.nonNull.dateTime("createdAt");
         t.field("postedBy", {
             type: "User",
             resolve(parent, args, context) {
@@ -87,7 +88,7 @@ export const LinkMutation = extendType({
                 const originalLink = await context.prisma.link.findUniqueOrThrow({ where: { id: Number(id) } });
 
                 const updatedLinkObj: NexusGenObjects['Link'] = {
-                    id: Number(id),
+                    ...originalLink,
                     url: url?.length === 0 ? originalLink.url : url!,
                     description: description?.length === 0 ? originalLink.description : description!
                 };
