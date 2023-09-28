@@ -8,7 +8,6 @@ export interface Context {
     userId?: number;
 }
 
-
 export const context = ({ req }: { req: Request; }): Context => {
     const token = req && req.get('Authorization') ? decodeAuthHeader(req.get('Authorization')!) : null;
     return {
