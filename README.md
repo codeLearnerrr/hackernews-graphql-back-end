@@ -7,6 +7,7 @@
 - Maybe there is a set up for Auth.ts related to APP_SECRET check it out before installing
 - Sorting with multiple criterias input object is a sequence of objects this way [LinkOrderByInput!] -> [{url: asc}, {description: desc}]
 - The postgreSQL database is runned in docker
+- To view data in production from prisma access the cloud dashboard [here](https://cloud.prisma.io/)
 
 ## Troubleshooting
 - If after a prisma migration the data model types don't show up in Nexus context param, reload the IDE
