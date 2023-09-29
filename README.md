@@ -1,36 +1,83 @@
 ## Hackernews GraphQL Back-End
- This boilerplate containts an Apollo GraphQL Server + Prisma as SQL database. 
+ This is a HackerNews prototype based on Apollo GraphQL Server + Prisma as SQL database. 
 
-## Project Notes
-- Nexus is the schema generator for graphql and prisma
-- After every change in the data model of prisma, it needs to be migrated
-- Maybe there is a set up for Auth.ts related to APP_SECRET check it out before installing
-- Sorting with multiple criterias input object is a sequence of objects this way [LinkOrderByInput!] -> [{url: asc}, {description: desc}]
-- The postgreSQL database is runned in docker
-- To view data in production from prisma access the cloud dashboard [here](https://cloud.prisma.io/)
-
-## Troubleshooting
-- If after a prisma migration the data model types don't show up in Nexus context param, reload the IDE
+![hackernews-graphql-back-end](https://github.com/codeLearnerrr/hackernews-graphql-back-end/assets/44307139/dda4a93a-2bd9-4bad-9135-c8282acc2664)
 
 ## Prerequisites
 
-- [x] Have an Apollo account for Apollo Studio [here](https://studio.apollographql.com/)
-- [x] Have an Prisma account for Prisma Studio [here](https://www.prisma.io/studio)
-- [x] Install docker from [here](https://docs.docker.com/desktop/install/windows-install/)
-- [x] Create local dev.db instead of env('DATABASE_URL') in schema.prisma file > datasource db > url 
-- [x] To publish is necessary to provision a `heroku-postgres` add-on instance
-- [x] Before publishing to heroku make sure you added the github secrets used in `deployment.yml`
-- [x] Run the prisma database script before using it `npx prisma migrate dev --name "init"`
+- Node above version 18+
 
+  ```cmd
+    https://nodejs.org/en/download
+  ```
+- Most recent stable version of Docker 
+
+  ```cmd
+    https://docs.docker.com/desktop/install/windows-install/
+  ```
 ## Features
+
+- [x] User operations: create account and login
+- [x] Post as link
+- [x] Vote/unvote links
+- [x] Query several links at a time or one
+- [x] Filter, sort and paginate links
+
+## Installing
+
+- Clone this project
+  
+  ```cmd
+    git clone https://github.com/codeLearnerrr/hackernews-graphql-back-end.git
+  ```
+ 1. Install packages
+    
+    ```cmd
+    yarn install
+    ```
+ 3. Setup local .env
+    
+    ```cmd
+    yarn env:local
+    ```
+ 4. Run docker
+    
+    ```cmd
+    yarn dockerDb
+    ```
+ 5. Run the project
+    
+    ```cmd
+    yarn dev
+    ```
+
+## Publishing
+
+- [x] Before publishing to heroku make sure you added the github secrets used in `deployment.yml`
+- [x] To publish online is necessary to provision a [heroku-postgres](https://elements.heroku.com/addons/heroku-postgresql) add-on instance
+
+## Project Notes
+
+- The postgreSQL database is runned in docker
+- To view data in production from prisma access the [cloud dashboard](https://cloud.prisma.io/)
+- After every local change in `prisma.schema` is necessary to run a migration  `npx prisma migrate dev --name "init"`
+- Prisma Studio for local database administration by running `npx prisma studio` on CLI
+
+## Contributing 
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/amazing-feature)
+3. Commit your Changes (git commit -m 'feat(amazing-feature): my feature is awesome')
+4. Push to the Branch (git push origin feature/amazing-feature)
+5. Open a Pull Request
+
+## Acknowledgments
 
 - [x] Automatic schema generation and typescript types from "code first" approach provided by [Nexus GraphQL](https://www.npmjs.com/package/nexus) 
 - [x] [Prisma](https://www.npmjs.com/package/prisma) as type-safe ORM 
 - [x] Pre-configured GraphQL server from [Apollo Server](https://www.npmjs.com/package/apollo-server)
 - [x] Typescript support from [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
-- [x] Localhost Prisma Studio for database administration by running `npx prisma studio` on CLI
-
-## Installing
-
-- Clone this project
-- Do any .env set up locally?
