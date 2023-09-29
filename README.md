@@ -61,7 +61,7 @@
 - The postgreSQL database is runned in docker
 - To view data in production from prisma access the [cloud dashboard](https://cloud.prisma.io/)
 - After every local change in `prisma.schema` is necessary to run a migration  `npx prisma migrate dev --name "init"`
-- Prisma Studio for local database administration by running `npx prisma studio` on CLI
+- Available prisma Studio for local database administration by running `npx prisma studio` on CLI
 
 ## Contributing 
 
@@ -77,7 +77,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## Acknowledgments
 
-- [x] Automatic schema generation and typescript types from "code first" approach provided by [Nexus GraphQL](https://www.npmjs.com/package/nexus) 
-- [x] [Prisma](https://www.npmjs.com/package/prisma) as type-safe ORM 
-- [x] Pre-configured GraphQL server from [Apollo Server](https://www.npmjs.com/package/apollo-server)
-- [x] Typescript support from [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
+-  Automatic schema generation and typescript types from "code first" approach provided by [Nexus GraphQL](https://www.npmjs.com/package/nexus) 
+-  [Prisma](https://www.npmjs.com/package/prisma) as type-safe ORM 
+-  Pre-configured GraphQL server from [Apollo Server](https://www.npmjs.com/package/apollo-server)
+-  Typescript support from [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
