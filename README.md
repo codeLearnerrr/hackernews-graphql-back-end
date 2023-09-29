@@ -1,7 +1,8 @@
 ## Hackernews GraphQL Back-End
  This is a HackerNews prototype based on Apollo GraphQL Server + Prisma as SQL database. 
 
-![hackernews-graphql-back-end](https://github.com/codeLearnerrr/hackernews-graphql-back-end/assets/44307139/dda4a93a-2bd9-4bad-9135-c8282acc2664)
+![hackernews-graphql-back-end](https://github.com/codeLearnerrr/hackernews-graphql-back-end/assets/44307139/5b2fc548-0963-4e7b-8b79-b65fac7bf0ed)
+
 
 ## Prerequisites
 
