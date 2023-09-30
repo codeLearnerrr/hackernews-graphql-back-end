@@ -52,11 +52,6 @@
     yarn dev
     ```
 
-## Publishing
-
-- [x] Before publishing to heroku make sure you added the github secrets used in `deployment.yml`
-- [x] To publish online is necessary to provision a [heroku-postgres](https://elements.heroku.com/addons/heroku-postgresql) add-on instance
-
 ## Project Notes
 
 - The postgreSQL database is runned in docker
