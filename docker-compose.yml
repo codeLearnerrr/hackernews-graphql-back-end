@@ -2,8 +2,17 @@ version: '3.8'
 services:
 
   # Docker connection string for local machine: postgres://postgres:postgres@localhost:5432/
-
-  postgres:
+  apollo:
+    build:
+      dockerfile: ./dockerfile
+    entrypoint: ./entrypoint.sh
+    depends_on: 
+     - postgresdb
+    ports:
+      - 3000:3000
+    networks:         
+     - hackernews-network
+  postgresdb:
     image: postgres:13.5    
     restart: always
     environment:            
@@ -12,7 +21,10 @@ services:
     volumes:                
       - postgres:/var/lib/postgresql/data
     ports:
-      - '5432:5432'         
-
+      - '5432:5432'
+    networks:         
+     - hackernews-network
+networks: 
+  hackernews-network:
 volumes:
   postgres:

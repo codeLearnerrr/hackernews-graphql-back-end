@@ -9,10 +9,10 @@
     "env:local": "cp .env.example .env",
     "generate": "ts-node --transpile-only src/schema.ts",
     "prismaStudio": "npx prisma studio",
-    "dockerDb": "docker-compose up",
     "migrate:deploy": "prisma migrate deploy",
     "build": "prisma generate && npm run generate && tsc",
-    "start": "node dist/src/index.js"
+    "start": "node dist/src/index.js",
+    "setup": "yarn install && yarn env:local && yarn prisma migrate dev && yarn dev"
   },
   "dependencies": {
     "@prisma/client": "^5.3.1",
