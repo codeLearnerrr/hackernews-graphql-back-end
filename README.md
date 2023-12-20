@@ -26,38 +26,48 @@
 
 ## Installing
 
+Warning: **For windows users use bash instead of powershell or cmd**
+
 - Clone this project
   
   ```cmd
     git clone https://github.com/codeLearnerrr/hackernews-graphql-back-end.git
   ```
- 1. Install packages
+ 1. Select the db address in [.env.example](./.env.example)
+  
+ 2. Run postgres on docker
+    ```cmd
+      docker compose up postgresdb -d
+    ```
+ 3. Setup project by running
     
     ```cmd
-    yarn install
+    yarn setup
     ```
- 3. Setup local .env
-    
-    ```cmd
-    yarn env:local
-    ```
- 4. Run docker
-    
-    ```cmd
-    yarn dockerDb
-    ```
- 5. Run the project
-    
-    ```cmd
-    yarn dev
-    ```
+
+## Docker 
+- To run all docker compose services
+  ```cmd
+  docker compse up -d
+  ```
+
+- To delete this project fully from the computer execute 
+  ```cmd
+  docker compose down --volumes --rmi all
+  ```
 
 ## Project Notes
 
-- The postgreSQL database is runned in docker
 - To view data in production from prisma access the [cloud dashboard](https://cloud.prisma.io/)
-- After every local change in `prisma.schema` is necessary to run a migration  `npx prisma migrate dev --name "init"`
-- Available prisma Studio for local database administration by running `npx prisma studio` on CLI
+- After every local change in `prisma.schema` is necessary to run a migration  
+```cmd
+npx prisma migrate dev --name "init"
+``` 
+- Available prisma Studio for local database administration by running 
+```cmd
+npx prisma studio
+``` 
+on CLI
 
 ## Contributing 
 
